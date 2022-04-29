@@ -15,8 +15,16 @@
 </head>
 
 <body>
-
-    <form action="{{route('add')}}" method="POST">
+    @if ($errors->any())
+        <div style="color: red">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    <form action="{{ route('add') }}" method="POST">
         @csrf
         <label for="">Name: </label>
         <input type="text" name="name"><br>

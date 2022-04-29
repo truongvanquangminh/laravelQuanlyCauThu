@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomersController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,7 +23,7 @@ Route::post('/mane', [CustomersController::class, 'store'])->name('add');
 
 Route::get('/{id}', [CustomersController::class, 'show'])->name('show');
 
-Route::post('/{id}/edit', [CustomersController::class, 'edit'])->name('edit');
+Route::post('/{id}/edit', [CustomersController::class, 'update'])->name('edit');
 
 Route::delete('/mane/{id}', [CustomersController::class, 'destroy'])->name('destroy');
 
